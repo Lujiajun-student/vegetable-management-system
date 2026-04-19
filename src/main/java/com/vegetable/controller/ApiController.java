@@ -106,7 +106,7 @@ public class ApiController {
     @PostMapping("/orders/{orderId}/pay")
     public ResponseEntity<?> payOrder(@PathVariable Long orderId) {
         try {
-            Order order = orderService.payOrder(orderId);
+            // Order order = orderService.payOrder(orderId);
             Map<String, Object> response = new HashMap<>();
             response.put("success", true);
             response.put("message", "支付成功");

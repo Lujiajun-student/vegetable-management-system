@@ -20,9 +20,6 @@ public class CartService {
     @Autowired
     private ProductService productService;
 
-    @Autowired
-    private UserService userService;
-
     public Map<String, Object> getCart(User user) {
         List<CartItem> cartItems = cartItemRepository.findByUser(user);
         double total = cartItems.stream()

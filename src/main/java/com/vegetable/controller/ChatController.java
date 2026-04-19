@@ -19,6 +19,8 @@ public class ChatController {
     private UserService userService;
     @Autowired
     private OrderService orderService;
+    @Autowired
+    private Chat chat;
 
     @GetMapping("/chat")
     public String chatPage() {
@@ -51,7 +53,7 @@ public class ChatController {
         }
         String systemPrompt = "你是一个蔬菜销售助手，名字叫派蒙。" + orderInfo.toString() + "请根据用户历史订单和问题，给出最合适的蔬菜推荐。可用的蔬菜分类有：" +
                 "叶菜类、根茎类、瓜类、豆类、茄果类、肉类。注意，回答时尽量不要使用*。";
-        String response = com.vegetable.AI.Chat.chatWithSystemPrompt(systemPrompt, message);
+        String response = chat.chatWithSystemPrompt(systemPrompt, message);
         return Map.of("response", response);
     }
 } 

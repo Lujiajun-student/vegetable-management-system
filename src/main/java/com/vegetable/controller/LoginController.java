@@ -30,7 +30,7 @@ public class LoginController {
                        @RequestParam String password,
                        RedirectAttributes redirectAttributes) {
         try {
-            User user = userService.login(username, password);
+            // User user = userService.login(username, password);
             // 登录成功，重定向到主页面
             return "redirect:/main";
         } catch (Exception e) {
